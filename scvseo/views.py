@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from forms import MainForm
 from django.http import HttpResponse
+import csv
 
 
 def index(request):
@@ -19,12 +20,18 @@ def index(request):
 def createCSV(result_ranks,website_list,):
 
     websites = []
-    fp = 0
-    for line in iter(website_list):
-        if fp==0:
-            fp+=1
+
+    lines = website_list.read().splitlines()
+    reader = csv.reader(lines)
+    i=0
+    for row in reader:
+        if i==0:
+            i+=1
             continue
-        websites.append(line)
+        if not row[0]:
+            break
+        websites.append(row[0])
+
 
     with result_ranks.file as f:
         content = f.readlines()
@@ -54,7 +61,6 @@ def createCSV(result_ranks,website_list,):
                         cellt = ','.join(cell)
                         current_line.append("\""+cellt+"\"")
                 p+='\n'+','.join(current_line)
-                print urls,
                 urls = []
                 current_line = []
         elif (i-1)%13 == 0:
@@ -67,7 +73,7 @@ def createCSV(result_ranks,website_list,):
             urls.append(elem.split(',')[1])
 
 
-    response = HttpResponse(content_type='text/plain')
+    response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="result.csv"'
     response.write(p)
     return response
