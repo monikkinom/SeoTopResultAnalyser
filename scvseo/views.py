@@ -24,8 +24,7 @@ def createCSV(result_ranks,website_list,):
         if fp==0:
             fp+=1
             continue
-        url = str(line).replace(",","")
-        websites.append(url)
+        websites.append(line)
 
     with result_ranks.file as f:
         content = f.readlines()
