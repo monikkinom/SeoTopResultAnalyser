@@ -58,7 +58,6 @@ def createCSV(result_ranks, website_list, ):
     for i, elem in enumerate(content):
         if i==0:
             continue
-
         if keyword_added==True:
             keyword = elem.split(',')[0]
             current_line.append(keyword)
