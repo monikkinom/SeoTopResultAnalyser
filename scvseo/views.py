@@ -32,7 +32,7 @@ def createCSV(result_ranks, website_list, ):
         websites.append(row[0])
 
     with result_ranks.file as f:
-        content = f.readlines()
+        content = f.read().splitlines()
 
     p = ""
 
@@ -54,23 +54,19 @@ def createCSV(result_ranks, website_list, ):
     #     website_url = line_content[2]
     #     website_rank = line_content[3]
 
-    keyword_added = False
-
+    keyword_added = True
     for i, elem in enumerate(content):
-
-        if i == 0:
+        if i==0:
             continue
 
-        if not keyword_added:
+        if keyword_added==True:
             keyword = elem.split(',')[0]
             current_line.append(keyword)
-            keyword_added = True
-
+            keyword_added = False
         url = elem.split(',')[2]
         if not url:
             continue
         urls.append(url)
-
         if i % 10 == 0:
             if i != 0:
                 for website in websites:
@@ -87,7 +83,7 @@ def createCSV(result_ranks, website_list, ):
                 p += '\n' + ','.join(current_line)
                 urls = []
                 current_line = []
-                keyword_added = False
+                keyword_added = True
 
 
     #
