@@ -56,12 +56,26 @@ def createCSV(result_ranks, website_list, ):
 
     keyword_added = False
 
-    for i, elem in enumerate(content[1:]):
+    for i, elem in enumerate(content):
+
+        if i == 0:
+            continue
+
+        if not keyword_added:
+            keyword = elem.split(',')[0]
+            current_line.append(keyword)
+            keyword_added = True
+
+        url = elem.split(',')[2]
+        if not url:
+            continue
+        urls.append(url)
+
         if i % 10 == 0:
             if i != 0:
                 for website in websites:
                     cell = []
-                    for rank, indi_link in enumerate(urls[1:]):
+                    for rank, indi_link in enumerate(urls):
                         if website in indi_link:
                             tpr = rank + 1
                             cell.append(str(tpr))
@@ -73,16 +87,7 @@ def createCSV(result_ranks, website_list, ):
                 p += '\n' + ','.join(current_line)
                 urls = []
                 current_line = []
-
-        if not keyword_added:
-            keyword = elem.split(',')[0]
-            current_line.append(keyword)
-            keyword_added = True
-
-        url = elem.split(',')[2]
-        if not url:
-            continue
-        urls.append(url)
+                keyword_added = False
 
 
     #
