@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2bf8d4e8-74e0-47f0-aa9a-ee77a2f61ae3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seotool/settings.py" afterPath="$PROJECT_DIR$/seotool/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scvseo/views.py" afterPath="$PROJECT_DIR$/scvseo/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="2bf8d4e8-74e0-47f0-aa9a-ee77a2f61ae3" name="Default" comment="" />
     <ignored path="seotool.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -90,8 +86,8 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scvseo/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5185811" vertical-offset="578" max-vertical-offset="1875">
-              <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.8733108" vertical-offset="653" max-vertical-offset="1875">
+              <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -889,8 +885,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scvseo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5185811" vertical-offset="578" max-vertical-offset="1875">
-          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.8733108" vertical-offset="653" max-vertical-offset="1875">
+          <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
